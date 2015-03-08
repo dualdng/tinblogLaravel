@@ -1,0 +1,97 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-pb717o');
+	src:url('fonts/icomoon.eot?#iefix-pb717o') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-pb717o') format('woff'),
+		url('fonts/icomoon.ttf?-pb717o') format('truetype'),
+		url('fonts/icomoon.svg?-pb717o#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+	content: "\e600";
+}
+.icon-image:before {
+	content: "\e601";
+}
+.icon-images:before {
+	content: "\e602";
+}
+.icon-headphones:before {
+	content: "\e60d";
+}
+.icon-pacman:before {
+	content: "\e603";
+}
+.icon-file:before {
+	content: "\e604";
+}
+.icon-bookmarks:before {
+	content: "\e615";
+}
+.icon-star:before {
+	content: "\e616";
+}
+.icon-star2:before {
+	content: "\e617";
+}
+.icon-heart:before {
+	content: "\e614";
+}
+.icon-heart2:before {
+	content: "\e613";
+}
+.icon-cool:before {
+	content: "\e607";
+}
+.icon-neutral:before {
+	content: "\e605";
+}
+.icon-wondering:before {
+	content: "\e606";
+}
+.icon-arrow-up:before {
+	content: "\e608";
+}
+.icon-paragraph-justify:before {
+	content: "\e609";
+}
+.icon-feed:before {
+	content: "\e60a";
+}
+.icon-feed2:before {
+	content: "\e60b";
+}
+.icon-feed3:before {
+	content: "\e60c";
+}
+.icon-github:before {
+	content: "\e60e";
+}
+.icon-wordpress:before {
+	content: "\e60f";
+}
+.icon-wordpress2:before {
+	content: "\e610";
+}
+.icon-html5:before {
+	content: "\e611";
+}
+.icon-html52:before {
+	content: "\e612";
+}
