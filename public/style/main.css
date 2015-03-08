@@ -615,6 +615,12 @@ input.submit:hover {
 }
 
 
+/** 回到顶部**/
+#scrollUp {
+		position:fixed;
+		bottom:200px;
+		right:200px;
+}
 
 
 /** 后台管理 **/

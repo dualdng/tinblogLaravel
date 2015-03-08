@@ -109,6 +109,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 @yield('content')
 </article>
 <footer>
+<div id='scrollUp' style='display:none'><a href='javascript:scrollUp();'><span class='icon-arrow-up'></span></a></div>
 <nav id='navFoot'>
 <span><a href='http://www.uuuuj.com/#'>About</a>
 <a href='http://www.uuuuj.com/archive'>Archive</a>
@@ -119,7 +120,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <a href='#'>Syochio</a>
 <a href='#'>测试</a>
 </span>
-<div class='foot'>Music <a href='javascript:void(0);'  onclick='document.getElementById('backmusic').play()' >ON&nbsp|</a><a href='javascript:void(0);' onclick='document.getElementById('backmusic').pause()' >&nbspOFF</a><audio id='backmusic'src='#'  loop='loop'></audio>
+<div class='foot'>Music <a href='javascript:void(0);'  onclick="document.getElementById('backMusic').play()" >ON&nbsp|</a><a href='javascript:void(0);' onclick="document.getElementById('backMusic').pause()" >&nbspOFF</a><audio id='backMusic'src='#' loop='loop'></audio>
 <span class='icon-wordpress'></span>
 <span class='icon-html5'></span><br />
 <span>ICP备88888888号</span>
