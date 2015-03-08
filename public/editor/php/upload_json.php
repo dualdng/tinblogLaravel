@@ -9,8 +9,8 @@
 
 require_once 'JSON.php';
 
-$php_path = dirname(dirname(dirname(dirname(__FILE__)))).'/attached';
-$php_url = 'http://'.$_SERVER['HTTP_HOST']. '/tinblog/attached/';
+$php_path = dirname(dirname(dirname(__FILE__))).'/attached';
+$php_url = 'http://'.$_SERVER['HTTP_HOST']. '/attached/';
 
 //文件保存目录路径
 $save_path = $php_path ;
