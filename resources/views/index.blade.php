@@ -14,8 +14,8 @@ Brague&nbsp|首页
 <a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='image/logo.png' /></a>
 </div>
 <div id='navRight'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>/tinblog/public/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>/tinblog/public//category/LifeTime' title='关于你'>LifeTime</a>&nbsp
+<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
+<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
 &nbsp
 <a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
 </div>
@@ -23,11 +23,11 @@ Brague&nbsp|首页
 
 @section('navTopTwo')
 <div id='navLogo'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='image/logo.png' /></a>
+<a href='' title='Brague'><img src='image/logo.png' /></a>
 </div>
 <div id='navRight'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>/tinblog/public/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>/tinblog/public/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
+<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
+<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
 &nbsp
 <a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
 </div>
@@ -47,7 +47,7 @@ echo '<div class=\'article\'>';
 								$str=$values->content;
 								preg_match_all($ruls,$str,$matches);
 								$c=count($matches[0]);
-								echo '<div id=\'image\'><div class=\'title\'><span class=\'icon-image\'>&nbsp&nbsp</span><a id=\'title\' href=\'single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
+								echo '<div id=\'image\'><div class=\'title\'><span class=\'icon-image\'>&nbsp&nbsp</span><a id=\'title\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
 								echo '<div class=\'content\'>';
 								if(empty($values->excerpt))
 								{
@@ -66,10 +66,10 @@ echo '<div class=\'article\'>';
 								}
 								echo '</div>';
 								echo '<div style=\'clear:both\'></div>';
-								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/tinblog/public/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
+								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
 								for($a=0;$a<$num;$a++)
 								{
-										echo'<a class=\'ta'.$a.'\'href=\'/tinblog/public/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+										echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
 								}
 								echo '</div>
 
@@ -82,7 +82,7 @@ echo '<div class=\'article\'>';
 								$ruls='/<audio[^>]+>/iu';
 								$str=$values->content;
 								preg_match($ruls,$str,$matches);
-								echo '<div id=\'music\'><div class=\'title\'><span class=\'icon-headphones\'></span><a id=\'title\' href=\'single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
+								echo '<div id=\'music\'><div class=\'title\'><span class=\'icon-headphones\'></span><a id=\'title\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
 								if(empty($values->excerpt))
 								{
 										echo '<div class=\'content\'>'.@$matches[0].'</div>';
@@ -91,10 +91,10 @@ echo '<div class=\'article\'>';
 								{
 										echo '<div class=\'content\'>'.$values->excerpt.@$matches[0].'</div>';
 								}
-								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/tinblog/public/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
+								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
 								for($a=0;$a<$num;$a++)
 								{
-										echo'<a class=\'ta'.$a.'\'href=\'/tinblog/public/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+										echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
 								}
 								echo '</div>
 
@@ -104,7 +104,7 @@ echo '<div class=\'article\'>';
 						}
 						while($values->type==3)//status
 						{
-								echo '<div id=\'status\'><div class=\'content\'><span class=\'icon-pacman\'></span><a id=\'title\' href=\'single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
+								echo '<div id=\'status\'><div class=\'content\'><span class=\'icon-pacman\'></span><a id=\'title\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
 								echo '</div>';
 								break;
 
@@ -114,7 +114,7 @@ echo '<div class=\'article\'>';
 								$ruls="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg|\.jpeg|\.bmp|\.png]))[\'|\"].*?[\/]?>/";
 								$str=$values->content;
 								preg_match($ruls,$str,$matches);
-								echo '<div id=\'standard\'><div class=\'title\'><span class=\'icon-file\' >&nbsp&nbsp</span><a id=\'title\' href=\'single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
+								echo '<div id=\'standard\'><div class=\'title\'><span class=\'icon-file\' >&nbsp&nbsp</span><a id=\'title\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
 								if(empty($values->excerpt))
 								{
 										echo '<div class=\'content\'>'.$values->content.'</div>';
@@ -124,10 +124,10 @@ echo '<div class=\'article\'>';
 										echo '<div class=\'content\'>'.$values->excerpt.'<a href=\''.@$matches[1].'\'>'.@$matches[0].'</a></div>';
 								}
 								echo '<div style=\'clear:both\'></div>';
-								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/tinblog/public/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
+								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
 								for($a=0;$a<$num;$a++)
 								{
-										echo'<a class=\'ta'.$a.'\'href=\'/tinblog/public/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+										echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
 								}
 								echo '</div>
 										<div class=\'date\'></div>

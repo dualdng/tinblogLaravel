@@ -29,7 +29,7 @@ class MainController extends Controller {
 				$data=array();
 				$data['post']=array_slice($this->post,$this->pageNum*($page-1),$this->pageNum);
 				$postNum=count($this->post);
-				$url='/tinblog/public/home';
+				$url='/home';
 				$data['pageNum']=$this->pageNum;
 				$data['page']=$page;
 				$data['postNum']=ceil($postNum/$this->pageNum);
@@ -56,7 +56,7 @@ class MainController extends Controller {
 				$page=$request->input('page');
 				$page=isset($page)?$page:1;
 				$data=array();
-				$url='/tinblog/public/category/'.$category;
+				$url='/category/'.$category;
 				$data['pageNum']=$this->pageNum;
 				$data['page']=$page;
 				$data['url']=$url;
@@ -78,7 +78,7 @@ class MainController extends Controller {
 				$page=$request->input('page');
 				$page=isset($page)?$page:1;
 				$data=array();
-				$url='/tinblog/public/tag/'.$tag;
+				$url='/tag/'.$tag;
 				$data['pageNum']=$this->pageNum;
 				$data['page']=$page;
 				$data['url']=$url;
@@ -114,8 +114,8 @@ class MainController extends Controller {
 														$archive[]=$time;
 														$archive[]='<div class=\'archiveDate\'><span class=\'icon-paragraph-justify\'>&nbsp&nbsp'.$time.'</span></div>';
 														$temp='<div class=\'archiveContent\'>';
-														$temp.='<a class=\'archiveTitle\' href=\'/tinblog/public/single/'.$values->id.'\'>'.$values->title.'</a><br />'; 
-														$temp.='<span>on <a class=\'archiveCate\' href=\'/tinblog/public/category/'.$values->name.'\'>'.$values->name.'</a>';
+														$temp.='<a class=\'archiveTitle\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><br />'; 
+														$temp.='<span>on <a class=\'archiveCate\' href=\'/category/'.$values->name.'\'>'.$values->name.'</a>';
 														$temp.=' in '.date('m-d',strtotime($values->createDate)).'<br /></span>';
 														$temp.='</div>';
 														$archive[]=$temp;
@@ -160,8 +160,8 @@ class MainController extends Controller {
 						{
 								if($month==substr($values->createDate,5,2))
 								{
-										$temp[]='<a class=\'archiveTitle\' href=\'/tinblog/public/single/'.$values->id.'\'>'.$values->title.'</a><br />'; 
-										$temp[].='<span>on <a class=\'archiveCate\' href=\'/tinblog/public/category/'.$values->name.'\'>'.$values->name.'</a>';
+										$temp[]='<a class=\'archiveTitle\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><br />'; 
+										$temp[].='<span>on <a class=\'archiveCate\' href=\'/category/'.$values->name.'\'>'.$values->name.'</a>';
 										$temp[].=' in '.date('m-d',strtotime($values->createDate)).'<br /></span>';
 								}
 								else

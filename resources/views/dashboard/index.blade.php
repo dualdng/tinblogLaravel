@@ -12,8 +12,8 @@
 <a class='list-group-item' href='javascript:void(0)'>网站选项</a>
 <a class='list-group-item' href='javascript:editLink()'>友情链接</a>
 <a class='list-group-item disable'>其他</a>
-<a class='list-group-item' href='/tinblog/public/logout' >登出</a>
-<a class='list-group-item' href='/tinblog/public/dashboard/clearCache'>缓存</a>
+<a class='list-group-item' href='/logout' >登出</a>
+<a class='list-group-item' href='/dashboard/clearCache'>缓存</a>
 </div>
 
 @endsection

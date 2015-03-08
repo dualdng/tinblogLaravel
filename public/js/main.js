@@ -123,7 +123,7 @@ return false;
  **/
 function updateView(id)
 {
-		var url='/tinblog/public/view/'+id;
+		var url='/view/'+id;
 		$.ajax({
 				url:url,
 				type:'GET',
@@ -135,7 +135,7 @@ function updateView(id)
 function getComment(postId)
 {
 		$('#progress').animate({'width':'100%'},10000);
-		var url='/tinblog/public/getComment/'+postId;
+		var url='/getComment/'+postId;
 		$.ajax({
 				url:url,
 				type:'POST',
@@ -149,7 +149,7 @@ function getComment(postId)
 function getCommentArea (postId,parentId)
 {
 		$('#progress').animate({'width':'100%'},10000);
-		var url='/tinblog/public/getCommentArea/'+postId;
+		var url='/getCommentArea/'+postId;
 		var parastr={"parentId":parentId};
 		$.ajax({
 				url:url,
@@ -196,7 +196,7 @@ function postComment()
 		var parastr={"postId":postId,"parentId":parentId,"userId":userId,"userIp":userIp,"userAgent":userAgent,"name":name,"email":email,"url":url,"text":text};
 		//		var parastr='id='+id+'&pre_post_id='+pre_post_id+'&user_id='+user_id+'&name='+name+'&email='+email+'&url='+url+'&text='+text;
 		$.ajax({
-				url:'/tinblog/public/postComment',
+				url:'/postComment',
 				type:'POST',
 				data:parastr,
 				dataType:'json',
@@ -245,7 +245,7 @@ function register()
 		var name=$('#name').val();
 		var email=$('#email').val();
 		var password=$('#password').val();
-		var url='/tinblog/public/register';
+		var url='/register';
 		var parastr={"name":name,"email":email,"password":password};
 		$.ajax({
 				url:url,
@@ -261,7 +261,7 @@ function register()
 }
 function getPostArea(id)
 {
-		var url='/tinblog/public/dashboard/post/'+id;
+		var url='/dashboard/post/'+id;
 		$.ajax({
 				url:url,
 				type:'GET',
@@ -284,7 +284,7 @@ function editPostArea()
 }
 function editPost(id)
 {
-		var url='/tinblog/public/dashboard/edit/'+id;
+		var url='/dashboard/edit/'+id;
 		$.ajax({
 				url:url,
 				type:'GET',
@@ -312,7 +312,7 @@ function postPost()
 		var type=$('#type').val();
 		var userId=$('#userId').val();
 		var state=$('#state').val();
-		var url='/tinblog/public/dashboard/post/'+userId;
+		var url='/dashboard/post/'+userId;
 		var parastr={"content":content,"title":title,"excerpt":excerpt,"categoryId":categoryId,"tag":tag,"type":type,"userId":userId,"state":state};
 		$.ajax({
 				url:url,
@@ -337,7 +337,7 @@ function updatePost(id)
 		var type=$('#type').val();
 		var userId=$('#userId').val();
 		var state=$('#state').val();
-		var url='/tinblog/public/dashboard/edit/'+id;
+		var url='/dashboard/edit/'+id;
 		var parastr={"content":content,"title":title,"excerpt":excerpt,"categoryId":categoryId,"tag":tag,"type":type,"userId":userId,"state":state};
 		$.ajax({
 				url:url,
