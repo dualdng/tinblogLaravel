@@ -18,6 +18,7 @@ class CommentController extends Controller {
 				}
 				foreach($comment as $values)
 				{
+						$avatar=MyBaseController::cacheAvatar($values->email);
 						echo '<div class=\'comment\'>';
 	/** 关于第三方认证的头像显示							if(strpos($values->userId,'qq')!==false)
 								{
@@ -28,7 +29,7 @@ class CommentController extends Controller {
 								else
 								{
 	**/
-						echo '<div class=\'authorAvatar\'><img src=\'http://www.gravatar.com/avatar/'.md5( strtolower( trim( $values->email ) ) ).'?s=40\'/></div>';
+						echo '<div class=\'authorAvatar\'><img src=\''.$avatar.'\'/></div>';
 						//							}
 						echo '<div class=\'commentContents\'>';
 						echo '<div class=\'commentPak\'>';
@@ -50,6 +51,7 @@ class CommentController extends Controller {
 				{
 						foreach ($comment as $values)
 						{
+								$avatar=MyBaseController::cacheAvatar($values->email);
 								echo '<div class=\'commentChildren\'>';
 /** 第三方头像 								if(strpos($result[$i][3],'qq')!==false)
 								{
@@ -60,7 +62,7 @@ class CommentController extends Controller {
 								else
 								{
 **/
-								echo '<div class=\'authorAvatar\'><img src=\'http://www.gravatar.com/avatar/'.md5( strtolower( trim( $values->email ) ) ).'?s=40\'/></div>';
+								echo '<div class=\'authorAvatar\'><img src=\''.$avatar.'\'/></div>';
 								//	}
 
 								echo '<div class=\'commentContents\'>';

@@ -13,8 +13,7 @@
 
 Route::get('/', 'MainController@index');//首页
 
-Route::post('home', 'MainController@index');//首页分页
-Route::get('home', 'MainController@index');
+Route::post('home', 'MainController@index');//首页分页 Route::get('home', 'MainController@index');
 
 Route::get('single/{id}', 'MainController@getPost');//文章页
 
@@ -52,7 +51,7 @@ Route::group(['middleware'=>'myAuth'],function(){
 		Route::get('dashboard/clearCache','Dashboard\MainController@clearCache');//ajax 发布文章id为用户id
 });
 
-Route::get('test', 'MainController@test');
+Route::get('test/{email}', 'MyBaseController@cacheAvatar');
 Route::get('getTest', 'MainController@getTest');
 
 
