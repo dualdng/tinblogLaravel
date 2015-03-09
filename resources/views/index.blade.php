@@ -5,7 +5,7 @@ Brague&nbsp|首页
 @section('header')
 <div class="bgImg"></div>
 <div class="mainTitle">
-<span><?php //line_api();?></span>
+<span><?php echo $line['line'];?></span>
 </div>
 @endsection
 
