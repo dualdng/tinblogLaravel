@@ -39,6 +39,7 @@ Brague&nbsp|首页
 echo '<div class=\'article\'>';
 		/**	echo '<div class=\'hit_count\'>'.$res[$i][9].'</div>';**/
 				foreach($post as $values) {
+						$values->content=stripslashes($values->content);
 						$tag=explode(',',$values->tag);
 						$num=count($tag);
 						while($values->type==1)//image   id w为文章唯一字段
