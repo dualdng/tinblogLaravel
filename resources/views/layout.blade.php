@@ -115,10 +115,8 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <a href='http://www.uuuuj.com/archive'>Archive</a>
 <a href='http://www.uuuuj.com/#'>Links</a>
 </span><br />
-<span><a href='#'>梦月酱</a>
-<a href='#'>测试测试测试</a>
-<a href='#'>Syochio</a>
-<a href='#'>测试</a>
+<span>
+@yield('link')
 </span>
 <div class='foot'>Music <a href='javascript:void(0);'  onclick="document.getElementById('backMusic').play()" >ON&nbsp|</a><a href='javascript:void(0);' onclick="document.getElementById('backMusic').pause()" >&nbspOFF</a><audio id='backMusic'src='#' loop='loop'></audio>
 <span class='icon-wordpress'></span>

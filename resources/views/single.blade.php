@@ -112,3 +112,10 @@ $(function(){
 
 </script>
 @endsection
+
+@section('link')
+<?php foreach($link as $links){
+		echo '<a href=\''.$links->link.'\' title=\''.$links->title.'\'>'.$links->name.'</a>&nbsp|&nbsp';
+}
+?>
+@endsection
