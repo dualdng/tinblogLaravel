@@ -67,7 +67,7 @@ $('#most_pop').append(data);
 
 $(document).on('click','#pageNav a',function()
 				{
-						$('#progress').animate({'width':'100%'},10000);
+						$('#progress').animate({'width':'100%'},3000);
 						$('.spinner').css({'display':'block'});
 						$('#article').fadeOut();
 						var	url=$(this).attr('href');
@@ -134,7 +134,7 @@ function updateView(id)
 
 function getComment(postId)
 {
-		$('#progress').animate({'width':'100%'},10000);
+		$('#progress').animate({'width':'100%'},3000);
 		var url='/getComment/'+postId;
 		$.ajax({
 				url:url,
@@ -148,7 +148,7 @@ function getComment(postId)
 }
 function getCommentArea (postId,parentId)
 {
-		$('#progress').animate({'width':'100%'},10000);
+		$('#progress').animate({'width':'100%'},3000);
 		var url='/getCommentArea/'+postId;
 		var parastr={"parentId":parentId};
 		$.ajax({
@@ -182,7 +182,7 @@ function cancelReply(postId,parentId)
 }
 function postComment()
 {
-		$('#progress').animate({'width':'100%'},10000);
+		$('#progress').animate({'width':'100%'},3000);
 		$('input.submit').attr('value','发送中!');
 		var postId=$(':input[name=\'postId\']').val();
 		var parentId=$(':input[name=\'parentId\']').val();
