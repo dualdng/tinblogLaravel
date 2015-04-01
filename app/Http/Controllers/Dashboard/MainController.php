@@ -33,7 +33,7 @@ class MainController extends Controller {
 				$data=array();
 				$data['post']=array_slice($this->post,$this->pageNum*($page-1),$this->pageNum);
 				$postNum=count($this->post);
-				$url='/tinblog/public/dashboard';
+				$url='/dashboard';
 				$data['pageNum']=$this->pageNum;
 				$data['page']=$page;
 				$data['postNum']=ceil($postNum/$this->pageNum);

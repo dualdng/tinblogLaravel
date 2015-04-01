@@ -47,17 +47,17 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <meta name='keywords' content='' />
 <meta name='author' content='Tinty' />
 <link rel='shortcut icon' href='favicon.ico'>
-<link rel='stylesheet' type='text/css' href='/tinblog/public/style/main.css' />
-<link rel='stylesheet' type='text/css' href='/tinblog/public/style/icomoon/style.css' />
-<link rel='stylesheet' type='text/css' href='/tinblog/public/image/github/gh-buttons.css' />
+<link rel='stylesheet' type='text/css' href='/style/main.css' />
+<link rel='stylesheet' type='text/css' href='/style/icomoon/style.css' />
+<link rel='stylesheet' type='text/css' href='/image/github/gh-buttons.css' />
 <link rel='stylesheet' href='phzoom/phzoom.css' />
-<link rel='stylesheet' href='/tinblog/public/editor/plugins/code/prettify.css' />
-<script type='text/javascript' src='/tinblog/public/js/jquery-2.1.0.min.js'></script>
-<script type='text/javascript' src='/tinblog/public/phzoom/phzoom.js'></script>
-<script type='text/javascript' src='/tinblog/public/js/main.js'></script>
-<script charset='utf-8' src='/tinblog/public/editor/kindeditor.js'></script>
-<script charset='utf-8' src='/tinblog/public/editor/plugins/code/code.js'></script>
-<script charset='utf-8' src='/tinblog/public/editor/plugins/code/prettify.js'></script>
+<link rel='stylesheet' href='/editor/plugins/code/prettify.css' />
+<script type='text/javascript' src='/js/jquery-2.1.0.min.js'></script>
+<script type='text/javascript' src='/phzoom/phzoom.js'></script>
+<script type='text/javascript' src='/js/main.js'></script>
+<script charset='utf-8' src='/editor/kindeditor.js'></script>
+<script charset='utf-8' src='/editor/plugins/code/code.js'></script>
+<script charset='utf-8' src='/editor/plugins/code/prettify.js'></script>
 
 <!--[if IE]>
 <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
@@ -111,7 +111,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <footer>
 <nav id='navFoot'>
 <span><a href='http://www.uuuuj.com/#'>About</a>
-<a href='http://www.uuuuj.com/archive.php'>Archive</a>
+<a href='http://www.uuuuj.com/archive'>Archive</a>
 <a href='http://www.uuuuj.com/#'>Links</a>
 </span><br />
 <span><a href='#'>梦月酱</a>

@@ -4,11 +4,11 @@
 @endsection
 @section('navTop')
 <div id='navLogo'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='/tinblog/public/image/logo.png' /></a>
+<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='/image/logo.png' /></a>
 </div>
 <div id='navRight'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
+<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
+<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
 &nbsp
 <a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
 </div>
@@ -16,18 +16,18 @@
 
 @section('navTopTwo')
 <div id='navLogo'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='/tinblog/public/image/logo.png' /></a>
+<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='/image/logo.png' /></a>
 </div>
 <div id='navRight'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>/tinblog/public/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>/tinblog/public/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
+<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
+<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
 &nbsp
 <a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
 </div>
 @endsection
 @section('banner')
 <?php 
-				echo '<a  id=\'a\' href=\'http://'.$_SERVER['HTTP_HOST'].'\'>HOME</a>&nbsp>&nbsp<a id=\'b\' href=\'/tinblog/public/category/'.$post->name.'\'>'.$post->name.'</a>&nbsp>&nbsp'.$post->title;
+				echo '<a  id=\'a\' href=\'http://'.$_SERVER['HTTP_HOST'].'\'>HOME</a>&nbsp>&nbsp<a id=\'b\' href=\'/category/'.$post->name.'\'>'.$post->name.'</a>&nbsp>&nbsp'.$post->title;
  ?>
 @endsection
 @section('content')
@@ -39,10 +39,10 @@
 				{
 						echo '<div id=\'single\'><div class=\'title\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>
 								<div class=\'content\'>'.$post->content.'</div>';
-						echo '<div class=\'user\'><span>Post on <a href=\'/tinblog/public/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
+						echo '<div class=\'user\'><span>Post on <a href=\'/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
 						for($a=0;$a<$num;$a++)
 						{
-								echo'<a class=\'ta'.$a.'\'href=\'/tinblog/public/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+								echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
 						}
 						echo '</div>
 								<div class=\'date\'></div>
@@ -53,10 +53,10 @@
 				{
 						echo '<div id=\'single\'><div class=\'title\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>
 								<div class=\'content\'>'.$post->content.'</div>';
-						echo '<div class=\'user\'><span>Post on <a href=\'/tinblog/public/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
+						echo '<div class=\'user\'><span>Post on <a href=\'/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
 						for($a=0;$a<$num;$a++)
 						{
-								echo'<a class=\'ta'.$a.'\'href=\'/tinblog/public/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+								echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
 						}
 						echo '</div>
 								<div class=\'date\'></div>
@@ -66,10 +66,10 @@
 				while($post->type==3)//status
 				{
 						echo '<div id=\'single\'><div class=\'content\'>'.$post->content.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>';
-						echo '<div class=\'user\'><span>Post on <a href=\'/tinblog/public/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
+						echo '<div class=\'user\'><span>Post on <a href=\'/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
 						for($a=0;$a<$num;$a++)
 						{
-								echo'<a class=\'ta'.$a.'\'href=\'/tinblog/public/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+								echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
 						}
 						echo '</div>
 
@@ -82,10 +82,10 @@
 				{
 						echo '<div id=\'single\'><div class=\'title\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>';
 						echo '<div class=\'content\'>'.$post->content.'</div>';
-						echo '<div class=\'user\'><span>Post on <a href=\'/tinblog/public/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
+						echo '<div class=\'user\'><span>Post on <a href=\'/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
 						for($a=0;$a<$num;$a++)
 						{
-								echo'<a class=\'ta'.$a.'\'href=\'/tinblog/public/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+								echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
 						}
 						echo '</div>
 								<div class=\'date\'></div>
