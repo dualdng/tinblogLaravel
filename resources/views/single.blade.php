@@ -32,6 +32,7 @@
 @endsection
 @section('content')
 <?php 
+				$post->content=stripslashes($post->content);
 		$tag=explode(',',$post->tag);
 		$num=count($tag);
 			echo '<div class=\'article\'>';
