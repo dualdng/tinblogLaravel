@@ -53,6 +53,7 @@ class MyBaseController extends Controller {
 		}
 		public static function removeHtmlTags($content)
 		{
+				//去除html标签
 				$value = strip_tags($content);
 				return is_array($value) ? array_map('k::htmlspecialchars', $value) : preg_replace('/&amp;((#(\d{3,5}|x[a-fA-F0-9]{4})|[a-zA-Z][a-z0-9]{2,5});)/', '&\\1', str_replace(array(
 						'&',
@@ -67,6 +68,21 @@ class MyBaseController extends Controller {
 						'&gt;',
 						'’'
 				) , $value));
+		}
+		public static function cacheAvatar($email)
+		{
+				//avatar头像缓存到文件
+				$time=60*60*24*30;//过期时间15天
+				$path=dirname(dirname(dirname(dirname(__File__)))).'/public/avatar/';
+				$email=md5(strtolower(trim($email)));
+				$file='/avatar/'.$email.'.jpg';
+				if(!file_exists($file)||(time()-filemtime($file))>$time){
+						$name=$path.$email.'.jpg';
+						$url='http://www.gravatar.com/avatar/'.$email.'?s=40';
+						$result=file_put_contents($name,file_get_contents($url));
+				}
+				$url='/avatar/'.$email.'.jpg';
+				return $url;
 		}
 }
 
