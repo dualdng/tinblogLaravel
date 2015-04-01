@@ -61,7 +61,8 @@ class MainController extends Controller {
 		public function getRegister() //
 		{
 				//注册页面
-				return view('dashboard.register');
+			//	return view('dashboard.register');
+				return view('dashboard.login');
 		}
 		public function register(MyRegister $request) //
 		{
