@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Model\Post;
+use App\Model\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
@@ -9,6 +10,7 @@ class MainController extends Controller {
 		// 前台页面展示控制器
 		private $pageNum;
 		private $post;
+		private $link;
 		function __construct()//初始化
 		{
 				$this->pageNum=5;
@@ -20,6 +22,15 @@ class MainController extends Controller {
 						Cache::put('post', serialize($post), 24*60);
 						$this->post=unserialize(Cache::get('post'));
 				}
+				if (Cache::has('link')) //如果有Cache则直接取出来并反序列化
+				{
+						$this->link=unserialize(Cache::get('link'));
+				}else{ //读取post数据序列化存入缓存
+						$link=Link::all();
+						Cache::put('link', serialize($link), 24*60);
+						$this->link=unserialize(Cache::get('link'));
+				}
+
 		}
 		public function index(Request $request)
 		{
@@ -31,6 +42,7 @@ class MainController extends Controller {
 				$postNum=count($this->post);
 				$url='/home';
 				$data['pageNum']=$this->pageNum;
+				$data['link']=$this->link;
 				$data['page']=$page;
 				$data['postNum']=ceil($postNum/$this->pageNum);
 				$data['url']=$url;
@@ -42,6 +54,7 @@ class MainController extends Controller {
 				//id为文章id
 				$data=array();
 				$data['id']=$id;
+				$data['link']=$this->link;
 				foreach($this->post as $values) {
 						if($values->id==$id){
 								$data['post']=$values;
@@ -58,6 +71,7 @@ class MainController extends Controller {
 				$data=array();
 				$url='/category/'.$category;
 				$data['pageNum']=$this->pageNum;
+				$data['link']=$this->link;
 				$data['page']=$page;
 				$data['url']=$url;
 				$data['category']=$category;
@@ -80,6 +94,7 @@ class MainController extends Controller {
 				$data=array();
 				$url='/tag/'.$tag;
 				$data['pageNum']=$this->pageNum;
+				$data['link']=$this->link;
 				$data['page']=$page;
 				$data['url']=$url;
 				$data['tag']=$tag;
@@ -97,6 +112,8 @@ class MainController extends Controller {
 		public function getArchive()
 		{
 				//归档页面
+				$data=array();
+				$data['link']=$this->link;
 				$month=array('12','11','10','09','08','07','06','05','04','03','02','01');
 				$year=array('14','15','16');
 				$archive=array();
@@ -124,7 +141,8 @@ class MainController extends Controller {
 								}
 						}
 				}
-				return view('archive')->with('archive',$archive);
+				$data['archive']=$archive;
+				return view('archive',$data);
 
 		}
 		public function getaaaArchive()
