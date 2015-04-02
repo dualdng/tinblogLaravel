@@ -84,5 +84,12 @@ class MyBaseController extends Controller {
 				$url='/avatar/'.$email.'.jpg';
 				return $url;
 		}
+		public static function getLine()
+		{
+				//获取台词
+				$url='http://lab.uuuuj.com/llago/include/line_api.php?type=1';
+				$line=file_get_contents($url,true);
+				return json_decode($line,true);
+		}
 }
 

@@ -35,6 +35,7 @@ class MainController extends Controller {
 		public function index(Request $request)
 		{
 				//首页文章列表
+				$line=MyBaseController::getLine();
 				$page=$request->input('page');
 				$page=isset($page)?$page:1;
 				$data=array();
@@ -43,6 +44,7 @@ class MainController extends Controller {
 				$url='/home';
 				$data['pageNum']=$this->pageNum;
 				$data['link']=$this->link;
+				$data['line']=$line;
 				$data['page']=$page;
 				$data['postNum']=ceil($postNum/$this->pageNum);
 				$data['url']=$url;
