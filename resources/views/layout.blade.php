@@ -36,15 +36,15 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 #########@MHHB#######################BAXA#@#############@#8SB@@@@@@@@@@@@@@@@@@@@@@@@@@##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #########AX&&B#####################BAAG8B@#######@#######@@@@##################@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 -->
-<html lang='en' class='no-js'>
+<html>
 <head>
 <meta charset='utf-8' />
 <meta http-equiv='X-UA-Compatible' content='IE=edge'> 
 <meta name='viewport' content='width=device-width, initial-scale=1'> 
 <meta name="csrf-token" content="{{ csrf_token() }}" > <!-- laravel的放夸域请求验证 -->
 <title>@yield('title')</title>
-<meta name='description' content='' />
-<meta name='keywords' content='' />
+<meta name='description' content='What a beauty life!' />
+<meta name='keywords' content='Brague,WordPress,Emlog,php' />
 <meta name='author' content='Tinty' />
 <link rel='shortcut icon' href='favicon.ico'>
 <link rel='stylesheet' type='text/css' href='/style/main.css' />

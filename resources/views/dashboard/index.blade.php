@@ -1,17 +1,20 @@
 @extends('dashboard.layout')
 @section('banner')
+<script>
+$('#progress').animate({'width':'100%'},3000);
+</script>
 @endsection
 @section('menu')
 <menu class='left'>
 <div class='list-group'>
-<a class='list-group-item disable'>网站管理</a>
+<a class='list-group-item disabled'>网站管理</a>
 <a class='list-group-item' href='javascript:getPostArea(<?php echo $user->id;?>)' >发表文章</a>
 <a class='list-group-item' href='javascript:editPostArea()'>编辑文章</a>
-<a class='list-group-item' href='javascript:void(0)'>编辑用户</a>
-<a class='list-group-item' href='javascript:void(0)'>编辑分类</a>
-<a class='list-group-item' href='javascript:void(0)'>网站选项</a>
-<a class='list-group-item' href='javascript:editLink()'>友情链接</a>
-<a class='list-group-item disable'>其他</a>
+<a class='list-group-item disabled' href='javascript:void(0)'>编辑用户</a>
+<a class='list-group-item disabled' href='javascript:void(0)'>编辑分类</a>
+<a class='list-group-item disabled' href='javascript:void(0)'>网站选项</a>
+<a class='list-group-item disabled' href='javascript:editLink()'>友情链接</a>
+<a class='list-group-item disabled'>其他</a>
 <a class='list-group-item' href='/logout' >登出</a>
 <a class='list-group-item' href='/dashboard/clearCache'>缓存</a>
 </div>

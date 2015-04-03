@@ -14,8 +14,9 @@ $(window).scroll(function(){
 		}
 		})
 });
+
 window.onload=function(){
-			$('.wipe-overlay').css({'width':'0px'});
+		$('#progress').stop(true,true);
 }
 function double(){
 		$('#article').css({'width':'70%'})
