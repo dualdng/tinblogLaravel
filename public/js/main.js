@@ -225,6 +225,7 @@ function postComment()
 {
 		$('#progress').animate({'width':'100%'},3000);
 		$('input.submit').attr('value','发送中!');
+		$('input.submit').attr('disabled','disabled');
 		var postId=$(':input[name=\'postId\']').val();
 		var parentId=$(':input[name=\'parentId\']').val();
 		var userId=$(':input[name=\'userId\']').val();
@@ -273,7 +274,8 @@ function postComment()
 						else if (data.success==-1) {
 								$('.commentField').css({'display':'none'});
 								$('.commentArea').css({'display':'none'});
-								$('#commentArea').html('<span class=\'icon-cool\'>&nbspYour comments here:</span><br />'+text);
+								$('.commentTitle').css({'display':'none'});
+								$('#commentArea').html('<p class=\'icon-cool\'>&nbspYour comments here:</p><div style=\'color:#61a64b;margin-top:10px;font-size:26px;\'>'+text+'</div>').css({'border-bottom':'1px solid #ccc','padding':'5px 0'});
 								$("html,body").animate({scrollTop:$("#commentArea").offset().top-100},1000);
 						}
 

@@ -111,9 +111,9 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <footer>
 <div id='scrollUp' style='display:none'><a href='javascript:scrollUp();'><span class='icon-arrow-up'></span></a></div>
 <nav id='navFoot'>
-<span><a href='http://www.uuuuj.com/#'>About</a>
-<a href='http://www.uuuuj.com/archive'>Archive</a>
-<a href='http://www.uuuuj.com/#'>Links</a>
+<span><a href='http://www.uuuuj.com/#'>关于</a>
+<a href='http://www.uuuuj.com/archive'>归档</a>
+<a href='http://www.uuuuj.com/#'>其他</a>
 </span><br />
 <span>
 @yield('link')
