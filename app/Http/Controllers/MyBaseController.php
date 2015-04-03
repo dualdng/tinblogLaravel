@@ -75,13 +75,26 @@ class MyBaseController extends Controller {
 				$time=60*60*24*30;//过期时间15天
 				$path=dirname(dirname(dirname(dirname(__File__)))).'/public/avatar/';
 				$email=md5(strtolower(trim($email)));
-				$file='/avatar/'.$email.'.jpg';
+				$file=$path.$email.'.jpg';
 				if(!file_exists($file)||(time()-filemtime($file))>$time){
 						$name=$path.$email.'.jpg';
 						$url='http://www.gravatar.com/avatar/'.$email.'?s=40';
-						$result=file_put_contents($name,file_get_contents($url));
+//						$timeOut=array('http'=>array('method'=>'GET','timeout'=>1));//使用 stream_context_create的方法设置file_get_content的超时时间，或者采用curl的方式。
+						$ch=curl_init();
+						curl_setopt($ch,CURLOPT_URL,$url);
+						curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+						curl_setopt($ch,CURLOPT_TIMEOUT,10);
+						$result=curl_exec($ch);
+					if(curl_error($ch)){
+								$url='/avatar/default.jpg';
+						}else{
+								$result=file_put_contents($name,$result);
+								$url='/avatar/'.$email.'.jpg';
+						}
+						curl_close($ch);
+				}else{
+						$url='/avatar/'.$email.'.jpg';
 				}
-				$url='/avatar/'.$email.'.jpg';
 				return $url;
 		}
 		public static function getLine()

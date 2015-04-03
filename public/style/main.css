@@ -257,36 +257,36 @@ span.views {
 		height:auto;
 }
 /** pagenav **/
-#pageNav {
+.pageNav {
 		margin:15px 0;
 		text-align:center;
 }
-#pageNav span{
+.pageNav span{
 		padding:10px 15px;
 		background:#99cc66;
 		color:#fff;
 }
-#pageNav a {
+.pageNav a {
 		padding:10px 15px;
 		background:#ff6666;
 		color:#fff;
 }
-#pageNav a:link {
+.pageNav a:link {
 		padding:10px 15px;
 		background:#ff6666;
 		color:#fff;
 }
-#pageNav a:visited {
+.pageNav a:visited {
 		padding:10px 15px;
 		background:#ff6666;
 		color:#fff;
 }
-#pageNav a:active {
+.pageNav a:active {
 		padding:10px 15px;
 		background:#ff6666;
 		color:#fff;
 }
-#pageNav a:hover {
+.pageNav a:hover {
 		padding:10px 15px;
 		background:#99cc66;
 		color:#fff;

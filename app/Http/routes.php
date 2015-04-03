@@ -13,13 +13,14 @@
 
 Route::get('/', 'MainController@index');//首页
 
-Route::post('home', 'MainController@index');//首页分页 Route::get('home', 'MainController@index');
+Route::get('home', 'MainController@index');//首页分页
 
 Route::get('single/{id}', 'MainController@getPost');//文章页
 
 Route::get('view/{id}', 'MainController@updateView');//更新浏览量
 
 Route::post('getComment/{id}', 'CommentController@getComment');//id为文章id
+Route::get('getComment/{id}', 'CommentController@getComment');//id为文章id
 
 Route::post('getCommentArea/{id}', 'CommentController@getCommentArea');//id
 
