@@ -46,7 +46,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <meta name='description' content='What a beauty life!' />
 <meta name='keywords' content='Brague,WordPress,Emlog,php' />
 <meta name='author' content='Tinty' />
-<link rel='shortcut icon' href='favicon.ico'>
+<link rel='shortcut icon' href='/favicon.ico'>
 <link rel='stylesheet' type='text/css' href='/style/main.css' />
 <link rel='stylesheet' type='text/css' href='/style/icomoon/style.css' />
 <link rel='stylesheet' type='text/css' href='/image/github/gh-buttons.css' />
