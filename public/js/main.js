@@ -76,7 +76,7 @@ $(document).on('click','#pageNav a',function()
 		(
 		 {
 				 url:url,
-				type:'POST',
+				type:'GET',
 				success:function(data)
 		{
 				$('#progress').stop(true,true);
@@ -95,6 +95,31 @@ $(document).on('click','#pageNav a',function()
 		 })
 return false;
 				})
+$(document).on('click','#commentPageNav a',function()
+				{
+						$('#progress').animate({'width':'100%'},3000);
+						$('.spinner').css({'display':'block'});
+						$('#comment').fadeOut();
+						var	url=$(this).attr('href');
+						$.ajax
+		(
+		 {
+				 url:url,
+				type:'GET',
+				success:function(data)
+		{
+				$('#progress').stop(true,true);
+				$('#progress').css({'width':'0'});
+
+				$('.spinner').css({'display':'none'});
+				$('#comment').empty();
+				$('#comment').append(data);
+				$('#comment').fadeIn();
+		}
+		 })
+return false;
+				})
+
 $(window).scroll(function(){
 		var h=$(this).scrollTop();
 		if(h>1000){

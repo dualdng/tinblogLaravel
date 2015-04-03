@@ -142,7 +142,7 @@ echo '</div>';
 ?>
 
 				</div>
-				<div id='pageNav'>
+				<div id='pageNav' class='pageNav'>
 <?php 
 if($postNum==1)
 				{

@@ -4,13 +4,17 @@ use App\Model\Comment;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller {
-		public function getComment($id)
+		public function getComment(Request $request,$id)
 		{
 				//获取文章评论
 				//id为文章id
 				$pageNum=5;
-				$page=1;
-				$comment=Comment::where('postId',$id)->where('parentId',0)->get()->sortByDesc('id')->slice($pageNum*($page-1),$pageNum);
+				$page=$request->input('page');
+				$page=isset($page)?$page:1;
+				$comment=Comment::where('postId',$id)->where('parentId',0)->get()->sortByDesc('id');
+				$postNum=$comment->count();
+				$postNum=ceil($postNum/$pageNum);
+				$comment=$comment->slice($pageNum*($page-1),$pageNum);
 				if (empty($comment)) {
 						echo '<div class=\'nocomment\'>';
 						echo 'No comment!';
@@ -43,6 +47,41 @@ class CommentController extends Controller {
 						self::getCommentChild($values->id);
 						echo '</div>';
 				}
+				echo '<div id=\'commentPageNav\' class=\'pageNav\'>';
+				if($postNum==1)
+				{
+				}
+				else
+				{
+						if($page!=1)
+						{
+								echo '<a href=\'/getComment/'.$id.'?page='.($page-1).'\'>Pre</a>&nbsp';
+						}
+						for($i=1;$i<=$postNum;$i++)
+						{
+								while($i==$page)
+								{
+										echo '<span>'.$i.'</span>&nbsp';
+										break;
+								}
+								while($i!=$page&$i<($page+4))
+								{	
+										echo '<a href=\'/getComment/'.$id.'?page='.$i.'\'>'.$i.'</a>&nbsp';
+										break;
+								}
+								while($i>($page+4))
+								{
+										echo '...&nbsp<a href=\'/getComment/'.$id.'?page='.$postNum.'\'>'.$postNum.'</a>&nbsp';
+										break;
+								}
+						}
+						if($page!=$postNum)
+						{
+								echo '<a href=\'/getComment/'.$id.'?page='.($page+1).'\'>Next</a>';
+						}
+				}
+				echo '</div>';
+
 		}
 		public function getCommentChild($postId)
 		{
