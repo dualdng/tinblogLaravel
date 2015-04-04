@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', 'MainController@index');//首页
+Route::get('/', 'MainController@getIndex');//首页
 
-Route::get('home', 'MainController@index');//首页分页
+Route::get('page/{page}', 'MainController@index');//首页分页
+
+Route::post('page/{page}', 'MainController@index');//首页分页
 
 Route::get('single/{id}', 'MainController@getPost');//文章页
+
+Route::post('single/{id}', 'MainController@getPost');//文章页
 
 Route::get('view/{id}', 'MainController@updateView');//更新浏览量
 
@@ -26,13 +30,15 @@ Route::post('getCommentArea/{id}', 'CommentController@getCommentArea');//id
 
 Route::post('postComment', 'CommentController@postComment');
 
-Route::get('category/{category}', 'MainController@getCategory');
-Route::post('category/{category}', 'MainController@getCategory');
+Route::get('category/{category}/page/{page}', 'MainController@getCategory');
+Route::post('category/{category}/page/{page}', 'MainController@getCategory');
 
-Route::get('tag/{tag}', 'MainController@getTag');
-Route::post('tag/{tag}', 'MainController@getTag');
+Route::get('tag/{tag}/page/{page}', 'MainController@getTag');
+Route::post('tag/{tag}/page/{page}', 'MainController@getTag');
 
 Route::get('archive', 'MainController@getArchive');
+
+Route::post('archive', 'MainController@getArchive');
 
 Route::get('login', 'Dashboard\MainController@getLogin');
 

@@ -300,7 +300,7 @@ span.views {
 		font-size:18px;
 }
 
-.foot {
+.music {
 		float:right;
 		margin-top:-20px;
 }
@@ -635,7 +635,7 @@ input.submit:hover {
 
 
 /** 回到顶部**/
-#scrollUp {
+.widget {
 		position:fixed;
 		bottom:200px;
 		right:200px;
@@ -654,4 +654,7 @@ input.submit:hover {
 .menu {
 		margin-top:20px;
 }
-
+/** fixed **/
+#status {
+		margin-top:25px;
+}

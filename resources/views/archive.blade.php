@@ -4,17 +4,6 @@ Archive&nbsp|&nbsp首页
 @endsection
 
 
-@section('navTopTwo')
-<div id='navLogo'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='/image/logo.png' /></a>
-</div>
-<div id='navRight'>
-<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
-&nbsp
-<a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
-</div>
-@endsection
 @section('banner')
 <a  id='a' href='http://<?php echo $_SERVER['HTTP_HOST'];?>'>HOME</a>&nbsp>&nbspARCHIVE
 @endsection
