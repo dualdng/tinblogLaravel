@@ -144,7 +144,7 @@ if($music==1) {?>
 Music 
 <a href='javascript:void(0);'  onclick="document.getElementById('backMusic').play()" >ON&nbsp|</a>
 <a href='javascript:void(0);' onclick="document.getElementById('backMusic').pause()" >&nbspOFF</a>
-<audio id='backMusic'src='http://uuuuj.com/music/TrustYou.mp3' loop='loop' autoplay='autoplay'></audio>
+<audio id='backMusic'src='http://uuuuj.com/music/Scabs.mp3' loop='loop' autoplay='autoplay'></audio>
 <span class='icon-wordpress'></span>
 <span class='icon-html5'></span><br />
 <span>ICP备88888888号</span>
