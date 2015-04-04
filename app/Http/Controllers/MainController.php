@@ -40,6 +40,9 @@ class MainController extends Controller {
 				$page=1;
 				$data=array();
 				$data['post']=array_slice($this->post,$this->pageNum*($page-1),$this->pageNum);
+				foreach($data['post'] as $values) {//替换文章浏览量为实时数据
+						$values->view=Post::getView($values->id); 
+				}
 				$postNum=count($this->post);
 				$data['pageNum']=$this->pageNum;
 				$data['link']=$this->link;
@@ -59,6 +62,9 @@ class MainController extends Controller {
 				$page=isset($page)?$page:1;
 				$data=array();
 				$data['post']=array_slice($this->post,$this->pageNum*($page-1),$this->pageNum);
+				foreach($data['post'] as $values) {//替换文章浏览量为实时数据
+						$values->view=Post::getView($values->id);
+				}
 				$postNum=count($this->post);
 				$data['pageNum']=$this->pageNum;
 				$data['link']=$this->link;
@@ -80,6 +86,7 @@ class MainController extends Controller {
 				$data['music']=$music;
 				foreach($this->post as $values) {
 						if($values->id==$id){
+								$values->view=Post::getView($id);//替换文章浏览量为实时数据
 								$data['post']=$values;
 						}
 				}
@@ -108,6 +115,9 @@ class MainController extends Controller {
 				}
 				$postNum=count($temp);
 				$data['post']=array_slice($temp,$this->pageNum*($page-1),$this->pageNum);
+				foreach($data['post'] as $values) {//替换文章浏览量为实时数据
+						$values->view=Post::getView($values->id);
+				}
 				$data['postNum']=ceil($postNum/$this->pageNum);
 				return view('category',$data);
 		}
@@ -134,6 +144,9 @@ class MainController extends Controller {
 				}
 				$postNum=count($temp);
 				$data['post']=array_slice($temp,$this->pageNum*($page-1),$this->pageNum);
+				foreach($data['post'] as $values) {//替换文章浏览量为实时数据
+						$values->view=Post::getView($values->id);
+				}
 				$data['postNum']=ceil($postNum/$this->pageNum);
 				return view('tag',$data);
 		}
