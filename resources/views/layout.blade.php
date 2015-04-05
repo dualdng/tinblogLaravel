@@ -52,10 +52,8 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <link rel='stylesheet' type='text/css' href='/style/main.css' />
 <link rel='stylesheet' type='text/css' href='/style/icomoon/style.css' />
 <link rel='stylesheet' type='text/css' href='/image/github/gh-buttons.css' />
-<link rel='stylesheet' href='/phzoom/phzoom.css' />
 <link rel='stylesheet' href='/editor/plugins/code/prettify.css' />
 <script type='text/javascript' src='/js/jquery-2.1.0.min.js'></script>
-<script type='text/javascript' src='/phzoom/phzoom.js'></script>
 <script type='text/javascript' src='/js/main.js'></script>
 <script charset='utf-8' src='/editor/kindeditor.js'></script>
 <script charset='utf-8' src='/editor/plugins/code/code.js'></script>
