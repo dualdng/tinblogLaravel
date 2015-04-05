@@ -104,6 +104,35 @@ $(document).on('click','#pageNav a',function()
 						})
 						return false;
 				})
+$(document).on('click','#banner a',function()
+				{
+						var	url=$(this).attr('href');
+						$('#progress').animate({'width':'100%'},3000);
+						$('.spinner').css({'display':'block'});
+						$('#body').fadeOut();
+						$.ajax({
+								url:url,
+								type:'POST',
+								data:{"music":0},
+								success:function(data) {
+										$('#progress').stop(true,true);
+										$('#progress').css({'width':'0'});
+										$('.spinner').css({'display':'none'});
+										$('#banner').remove();
+										$('article').remove();
+										$('#body').prepend(data);
+										$('#body').fadeIn();
+										var state={
+												url:url,
+								title:$(document).attr('title'),
+								content:$('#body').html()
+										};
+										window.history.pushState(state,'',url);
+								}
+						})
+						return false;
+				})
+
 $(document).on('click','#commentPageNav a',function()
 				{
 						$('#progress').animate({'width':'100%'},3000);

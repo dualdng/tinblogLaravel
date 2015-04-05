@@ -5,7 +5,7 @@ Archive&nbsp|&nbsp首页
 
 
 @section('banner')
-<a  id='a' href='http://<?php echo $_SERVER['HTTP_HOST'];?>'>HOME</a>&nbsp>&nbspARCHIVE
+<a  id='a' href='/page/1'>HOME</a>&nbsp>&nbspARCHIVE
 @endsection
 
 @section('content')
