@@ -15,14 +15,7 @@ class MainController extends Controller {
 		function __construct()
 		{
 				$this->pageNum=20;
-				if (Cache::has('post'))
-				{
-						$this->post=unserialize(Cache::get('post'));
-				}else{ 
-						$post=Post::getPostDb();
-						Cache::put('post', serialize($post), 24*60*30);
-						$this->post=unserialize(Cache::get('post'));
-				}
+						$this->post=Post::getPostDb();
 		}
 		public function getIndex(Request $request)
 		{

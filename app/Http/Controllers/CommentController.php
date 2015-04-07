@@ -48,7 +48,7 @@ class CommentController extends Controller {
 						echo '</div>';
 				}
 				echo '<div id=\'commentPageNav\' class=\'pageNav\'>';
-				if($postNum==1)
+				if($postNum==1||$postNum==0)
 				{
 				}
 				else
