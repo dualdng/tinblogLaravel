@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title')
-Brague&nbsp|首页
+Brague&nbsp|&nbsp首页
 @endsection
 @section('header')
 <div class="bgImg"></div>

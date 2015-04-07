@@ -460,9 +460,28 @@ transform: scale(1.0);
 		font-size:14px;
 		color:#99cc66;
 }
+.comment:hover .reply {
+		visibility:visible;
+}
 
+.reply {
+		visibility:hidden;
+		font-size:12px;
+		padding:1px 4px;
+		background:#61a64b;
+}
+a.reply:link {
+		color:#fff;
+}
+a.cancelReply:link {
+		color:#fff;
+}
 .cancelReply {
+		font-size:12px;
 		display:none;
+		padding:1px 4px;
+		background:#61a64b;
+
 }
 #pageNavcomment {
 		margin:15px 0;

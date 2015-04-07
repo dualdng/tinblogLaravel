@@ -12,14 +12,15 @@ class CommentController extends Controller {
 				$page=$request->input('page');
 				$page=isset($page)?$page:1;
 				$comment=Comment::where('postId',$id)->where('parentId',0)->get()->sortByDesc('id');
-				$postNum=$comment->count();
-				$postNum=ceil($postNum/$pageNum);
-				$comment=$comment->slice($pageNum*($page-1),$pageNum);
 				if (empty($comment)) {
 						echo '<div class=\'nocomment\'>';
 						echo 'No comment!';
 						echo '</div>';
+						exit;
 				}
+				$postNum=$comment->count();
+				$postNum=ceil($postNum/$pageNum);
+				$comment=$comment->slice($pageNum*($page-1),$pageNum);
 				foreach($comment as $values)
 				{
 						$avatar=MyBaseController::cacheAvatar($values->email);
@@ -41,7 +42,7 @@ class CommentController extends Controller {
 						echo '<div class=\'commentDate\'>'.date('d M,y',strtotime($values->time)).'</div>';
 						echo '</div>';
 						echo '<div class=\'commentText\'>'.$values->text.'</div>';
-						echo '<div class=\'commentReply\'><a class=\'reply-'.$values->id.' reply\' href=\'javascript:void(0);\'onclick=\'getCommentArea('.$id.','.$values->id.')\'>reply</a><a href=\'javascript:void(0)\' class=\'cancelReply-'.$values->id.' cancelReply\' onclick=\'cancelReply('.$id.','.$values->id.')\'>cancel</a></div>';
+						echo '<div class=\'commentReply\'><a class=\'reply-'.$values->id.' reply\' href=\'javascript:void(0);\'onclick=\'getCommentArea('.$id.','.$values->id.')\'>回复</a><a href=\'javascript:void(0)\' class=\'cancelReply-'.$values->id.' cancelReply\' onclick=\'cancelReply('.$id.','.$values->id.')\'>取消</a></div>';
 						echo '<div class=\'commentArea-'.$values->id.' commentArea\'></div>';
 						echo '</div>';
 						self::getCommentChild($values->id);
@@ -110,7 +111,7 @@ class CommentController extends Controller {
 								echo '<div class=\'commentDate\'>'.date('d M,y',strtotime($values->time)).'</div>';
 								echo '</div>';
 								echo '<div class=\'commentText\'>'.$values->text.'</div>';
-								echo '<div class=\'commentReply\'><a class=\'reply-'.$values->id.' reply\' href=\'javascript:void(0);\'onclick=\'getCommentArea('.$values->postId.','.$values->id.')\'>reply</a><a href=\'javascript:void(0)\' class=\'cancelReply-'.$values->id.' cancelReply\' onclick=\'cancelReply('.$values->postId.','.$values->id.')\'>cancel</a></div>';
+								echo '<div class=\'commentReply\'><a class=\'reply-'.$values->id.' reply\' href=\'javascript:void(0);\'onclick=\'getCommentArea('.$values->postId.','.$values->id.')\'>回复</a><a href=\'javascript:void(0)\' class=\'cancelReply-'.$values->id.' cancelReply\' onclick=\'cancelReply('.$values->postId.','.$values->id.')\'>取消</a></div>';
 								echo '<div class=\'commentArea-'.$values->id.'\'></div>';
 								echo '</div>';
 								self::getCommentChild($values->id);
