@@ -32,31 +32,52 @@ class MainController extends Controller {
 				}
 
 		}
-		public function index(Request $request)
+		public function getIndex()
 		{
 				//首页文章列表
 				$line=MyBaseController::getLine();
-				$page=$request->input('page');
+				$music=1;
+				$page=1;
+				$data=array();
+				$data['post']=array_slice($this->post,$this->pageNum*($page-1),$this->pageNum);
+				$postNum=count($this->post);
+				$data['pageNum']=$this->pageNum;
+				$data['link']=$this->link;
+				$data['line']=$line;
+				$data['music']=$music;
+				$data['page']=$page;
+				$data['postNum']=ceil($postNum/$this->pageNum);
+				return view('index',$data);
+		}
+
+		public function index(Request $request,$page)
+		{
+				//首页文章列表
+				$line=MyBaseController::getLine();
+				$music=$request->input('music');
+				$music=isset($music)?$music:1;
 				$page=isset($page)?$page:1;
 				$data=array();
 				$data['post']=array_slice($this->post,$this->pageNum*($page-1),$this->pageNum);
 				$postNum=count($this->post);
-				$url='/home';
 				$data['pageNum']=$this->pageNum;
 				$data['link']=$this->link;
 				$data['line']=$line;
+				$data['music']=$music;
 				$data['page']=$page;
 				$data['postNum']=ceil($postNum/$this->pageNum);
-				$data['url']=$url;
 				return view('index',$data);
 		}
-		public function getPost($id)
+		public function getPost(Request $request,$id)
 		{
 				//文章页
 				//id为文章id
 				$data=array();
 				$data['id']=$id;
 				$data['link']=$this->link;
+				$music=$request->input('music');
+				$music=isset($music)?$music:1;
+				$data['music']=$music;
 				foreach($this->post as $values) {
 						if($values->id==$id){
 								$data['post']=$values;
@@ -64,11 +85,12 @@ class MainController extends Controller {
 				}
 				return view('single',$data);
 		}
-		public function getCategory(Request $request,$category)
+		public function getCategory(Request $request,$category,$page)
 		{
 				//分类页面
 				//
-				$page=$request->input('page');
+				$music=$request->input('music');
+				$music=isset($music)?$music:1;
 				$page=isset($page)?$page:1;
 				$data=array();
 				$url='/category/'.$category;
@@ -77,6 +99,7 @@ class MainController extends Controller {
 				$data['page']=$page;
 				$data['url']=$url;
 				$data['category']=$category;
+				$data['music']=$music;
 				$temp=array();
 				foreach($this->post as $values) {
 						if($values->name==$category) {
@@ -88,10 +111,12 @@ class MainController extends Controller {
 				$data['postNum']=ceil($postNum/$this->pageNum);
 				return view('category',$data);
 		}
-		public function getTag(Request $request,$tag)
+
+		public function getTag(Request $request,$tag,$page)
 		{
 				//标签页面
-				$page=$request->input('page');
+				$music=$request->input('music');
+				$music=isset($music)?$music:1;
 				$page=isset($page)?$page:1;
 				$data=array();
 				$url='/tag/'.$tag;
@@ -100,6 +125,7 @@ class MainController extends Controller {
 				$data['page']=$page;
 				$data['url']=$url;
 				$data['tag']=$tag;
+				$data['music']=$music;
 				$temp=array();
 				foreach($this->post as $values) {
 						if(stripos($values->tag,$tag)) {
@@ -115,6 +141,7 @@ class MainController extends Controller {
 		{
 				//归档页面
 				$data=array();
+				$data['music']=0;
 				$data['link']=$this->link;
 				$month=array('12','11','10','09','08','07','06','05','04','03','02','01');
 				$year=array('16','15','14');
@@ -133,8 +160,8 @@ class MainController extends Controller {
 														$archive[]=$time;
 														$archive[]='<div class=\'archiveDate\'><span class=\'icon-paragraph-justify\'>&nbsp&nbsp'.$time.'</span></div>';
 														$temp='<div class=\'archiveContent\'>';
-														$temp.='<a class=\'archiveTitle\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><br />'; 
-														$temp.='<span>on <a class=\'archiveCate\' href=\'/category/'.$values->name.'\'>'.$values->name.'</a>';
+														$temp.='<a id=\'title\' class=\'archiveTitle\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><br />'; 
+														$temp.='<span>on <a class=\'archiveCate\' href=\'/category/'.$values->name.'/page/1\'>'.$values->name.'</a>';
 														$temp.=' in '.date('m-d',strtotime($values->createDate)).'<br /></span>';
 														$temp.='</div>';
 														$archive[]=$temp;

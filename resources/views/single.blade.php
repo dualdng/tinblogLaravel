@@ -2,29 +2,6 @@
 @section('title')
 <?php echo $post->title;?>&nbsp|&nbspBrague
 @endsection
-@section('navTop')
-<div id='navLogo'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='/image/logo.png' /></a>
-</div>
-<div id='navRight'>
-<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
-&nbsp
-<a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
-</div>
-@endsection
-
-@section('navTopTwo')
-<div id='navLogo'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='/image/logo.png' /></a>
-</div>
-<div id='navRight'>
-<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
-&nbsp
-<a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
-</div>
-@endsection
 @section('banner')
 <?php 
 				echo '<a  id=\'a\' href=\'http://'.$_SERVER['HTTP_HOST'].'\'>HOME</a>&nbsp>&nbsp<a id=\'b\' href=\'/category/'.$post->name.'\'>'.$post->name.'</a>&nbsp>&nbsp'.$post->title;
@@ -38,12 +15,12 @@
 			echo '<div class=\'article\'>';
 				while($post->type==1)//image
 				{
-						echo '<div id=\'single\'><div class=\'title\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>
+						echo '<div id=\'single\'><div class=\'title\' value=\''.$post->title.' | Brague\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>
 								<div class=\'content\'>'.$post->content.'</div>';
-						echo '<div class=\'user\'><span>Post on <a href=\'/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
+						echo '<div class=\'user\'><span>Post on <a id=\'category\' href=\'/category/'.$post->name.'/page/1\'>'.$post->name.'</a> with tags:</span>';
 						for($a=0;$a<$num;$a++)
 						{
-								echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+								echo'<a id=\'tag\'  class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'/page/1\'>'.$tag[$a].'</a>&nbsp';
 						}
 						echo '</div>
 								<div class=\'date\'></div>
@@ -52,12 +29,12 @@
 				}
 				while($post->type==2)//music
 				{
-						echo '<div id=\'single\'><div class=\'title\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>
+						echo '<div id=\'single\'><div class=\'title\' value=\''.$post->title.' | Brague\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>
 								<div class=\'content\'>'.$post->content.'</div>';
-						echo '<div class=\'user\'><span>Post on <a href=\'/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
+						echo '<div class=\'user\'><span>Post on <a id=\'category\'  href=\'/category/'.$post->name.'/page/1\'>'.$post->name.'</a> with tags:</span>';
 						for($a=0;$a<$num;$a++)
 						{
-								echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+								echo'<a id=\'tag\'  class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'/page/1\'>'.$tag[$a].'</a>&nbsp';
 						}
 						echo '</div>
 								<div class=\'date\'></div>
@@ -66,11 +43,11 @@
 				}
 				while($post->type==3)//status
 				{
-						echo '<div id=\'single\'><div class=\'content\'>'.$post->content.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>';
-						echo '<div class=\'user\'><span>Post on <a href=\'/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
+						echo '<div id=\'single\'><div class=\'title\' value=\''.$post->title.' | Brague\'></div><div class=\'content\'>'.$post->content.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>';
+						echo '<div class=\'user\'><span>Post on <a id=\'category\' href=\'/category/'.$post->name.'/page/1\'>'.$post->name.'</a> with tags:</span>';
 						for($a=0;$a<$num;$a++)
 						{
-								echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+								echo'<a id=\'tag\'  class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'/page/1\'>'.$tag[$a].'</a>&nbsp';
 						}
 						echo '</div>
 
@@ -81,12 +58,12 @@
 				}
 				while($post->type==4)//standard
 				{
-						echo '<div id=\'single\'><div class=\'title\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>';
+						echo '<div id=\'single\'><div class=\'title\' value=\''.$post->title.' | Brague\'>'.$post->title.'<span class=\'views\'>'.$post->view.' Views<br />'.date('d M,y',strtotime($post->createDate)).'</span></div>';
 						echo '<div class=\'content\'>'.$post->content.'</div>';
-						echo '<div class=\'user\'><span>Post on <a href=\'/category/'.$post->name.'\'>'.$post->name.'</a> with tags:</span>';
+						echo '<div class=\'user\'><span>Post on <a id=\'category\'  href=\'/category/'.$post->name.'/page/1\'>'.$post->name.'</a> with tags:</span>';
 						for($a=0;$a<$num;$a++)
 						{
-								echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+								echo'<a id=\'tag\'  class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'/page/1\'>'.$tag[$a].'</a>&nbsp';
 						}
 						echo '</div>
 								<div class=\'date\'></div>

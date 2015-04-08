@@ -9,29 +9,6 @@ Brague&nbsp|&nbsp首页
 </div>
 @endsection
 
-@section('navTop')
-<div id='navLogo'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='image/logo.png' /></a>
-</div>
-<div id='navRight'>
-<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
-&nbsp
-<a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
-</div>
-@endsection
-
-@section('navTopTwo')
-<div id='navLogo'>
-<a href='' title='Brague'><img src='image/logo.png' /></a>
-</div>
-<div id='navRight'>
-<a href='/category/Codes' title='科学分类'>Codes</a>&nbsp
-<a href='/category/LifeTime' title='关于你'>LifeTime</a>&nbsp
-&nbsp
-<a href='http://soft.uuuuj.com' title='Soft Music'>Music</a>
-</div>
-@endsection
 
 @section('content')
 				<div id='article'>
@@ -67,10 +44,10 @@ echo '<div class=\'article\'>';
 								}
 								echo '</div>';
 								echo '<div style=\'clear:both\'></div>';
-								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
+								echo '<div class=\'user\'><span>'.$values->userName.' post on <a id=\'category\'  href=\'/category/'.$values->name.'/page/1\'>'.$values->name.'</a> with tags:</span>';
 								for($a=0;$a<$num;$a++)
 								{
-										echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+										echo'<a id=\'tag\' class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'/page/1\'>'.$tag[$a].'</a>&nbsp';
 								}
 								echo '</div>
 
@@ -92,10 +69,10 @@ echo '<div class=\'article\'>';
 								{
 										echo '<div class=\'content\'>'.$values->excerpt.@$matches[0].'</div>';
 								}
-								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
+								echo '<div class=\'user\'><span>'.$values->userName.' post on <a id=\'category\'  href=\'/category/'.$values->name.'/page/1\'>'.$values->name.'</a> with tags:</span>';
 								for($a=0;$a<$num;$a++)
 								{
-										echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+										echo'<a id=\'tag\'  class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'/page/1\'>'.$tag[$a].'</a>&nbsp';
 								}
 								echo '</div>
 
@@ -125,10 +102,10 @@ echo '<div class=\'article\'>';
 										echo '<div class=\'content\'>'.$values->excerpt.'<a href=\''.@$matches[1].'\'>'.@$matches[0].'</a></div>';
 								}
 								echo '<div style=\'clear:both\'></div>';
-								echo '<div class=\'user\'><span>'.$values->userName.' post on <a href=\'/category/'.$values->name.'\'>'.$values->name.'</a> with tags:</span>';
+								echo '<div class=\'user\'><span>'.$values->userName.' post on <a id=\'category\'  href=\'/category/'.$values->name.'/page/1\'>'.$values->name.'</a> with tags:</span>';
 								for($a=0;$a<$num;$a++)
 								{
-										echo'<a class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'\'>'.$tag[$a].'</a>&nbsp';
+										echo'<a id=\'tag\'  class=\'ta'.$a.'\'href=\'/tag/'.$tag[$a].'/page/1\'>'.$tag[$a].'</a>&nbsp';
 								}
 								echo '</div>
 										<div class=\'date\'></div>
@@ -151,7 +128,7 @@ if($postNum==1)
 				{
 						if($page!=1)
 						{
-								echo '<a href=\''.$url.'?page='.($page-1).'\'>Pre</a>&nbsp';
+								echo '<a href=\'/page/'.($page-1).'\'>Pre</a>&nbsp';
 						}
 						for($i=1;$i<=$postNum;$i++)
 						{
@@ -162,18 +139,18 @@ if($postNum==1)
 								}
 								while($i!=$page&$i<($page+4))
 								{	
-										echo '<a href=\''.$url.'?page='.$i.'\'>'.$i.'</a>&nbsp';
+										echo '<a href=\'/page/'.$i.'\'>'.$i.'</a>&nbsp';
 										break;
 								}
 								while($i>($page+4))
 								{
-										echo '...&nbsp<a href=\''.$url.'?page='.$postNum.'\'>'.$postNum.'</a>&nbsp';
+										echo '...&nbsp<a href=\'/page/'.$postNum.'\'>'.$postNum.'</a>&nbsp';
 										break;
 								}
 						}
 						if($page!=$postNum)
 						{
-								echo '<a href=\''.$url.'?page='.($page+1).'\'>Next</a>';
+								echo '<a href=\'/page/'.($page+1).'\'>Next</a>';
 						}
 				}
 ?>

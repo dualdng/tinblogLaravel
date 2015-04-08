@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php
+if($music==1) {?>
 <!--
 XXG988XXGG8993SSS333SSS553G&AHHHHHHHHBBBBBBMBHBBBBBBHBBBBBBBBBBBBBBBBBMX&MBBBBM#9;:,,.iBMMMBMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 &XX888GXXGG8993SSSSS555hh59GX&HHHHHHHHBBBBBBHHBBBBBHHHHHBBBBBBBBBBBBBMX9BBBBBMHS:.    5MBBBBBMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -50,7 +52,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <link rel='stylesheet' type='text/css' href='/style/main.css' />
 <link rel='stylesheet' type='text/css' href='/style/icomoon/style.css' />
 <link rel='stylesheet' type='text/css' href='/image/github/gh-buttons.css' />
-<link rel='stylesheet' href='phzoom/phzoom.css' />
+<link rel='stylesheet' href='/phzoom/phzoom.css' />
 <link rel='stylesheet' href='/editor/plugins/code/prettify.css' />
 <script type='text/javascript' src='/js/jquery-2.1.0.min.js'></script>
 <script type='text/javascript' src='/phzoom/phzoom.js'></script>
@@ -69,13 +71,27 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <header>
 @yield('header')
 </header>
-
 <nav id='navTop'>
-@yield('navTop')
+<div id='navLogo'>
+<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='image/logo.png' /></a>
+</div>
+<div id='navRight'>
+<a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
+<a id='category' href='/category/LifeTime/page/1' title='关于你'>LifeTime</a>&nbsp
+&nbsp
+<a href='http://soft.uuuuj.com' title='Soft Music' style='display:none'>Music</a>
+</div>
 </nav>
-
 <nav id='navTopTwo'>
-@yield('navTopTwo')
+<div id='navLogo'>
+<a href='' title='Brague'><img src='/image/logo.png' /></a>
+</div>
+<div id='navRight'>
+<a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
+<a id='category' href='/category/LifeTime/page/1' title='关于你'>LifeTime</a>&nbsp
+&nbsp
+<a href='http://soft.uuuuj.com' title='Soft Music' style='display:none'>Music</a>
+</div>
 <div id='progress'></div>
 </nav>
 
@@ -102,23 +118,33 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 </div>
 <!-- 载入动画-->
 <div id='body'>
+<?php };?>
 <div id='banner'>
 @yield('banner')
 </div>
 <article class="mainContent">
 @yield('content')
 </article>
+<?php
+if($music==1) {?>
 <footer>
+<div class='widget'>
+<a id='music' value='0' href='javascript:music()' title='点击关闭音乐'><span class='icon-headphones'></span></a>
 <div id='scrollUp' style='display:none'><a href='javascript:scrollUp();'><span class='icon-arrow-up'></span></a></div>
+</div>
 <nav id='navFoot'>
 <span><a href='http://www.uuuuj.com/#'>关于</a>
-<a href='http://www.uuuuj.com/archive'>归档</a>
+<a href='javascript:getArchive()'>归档</a>
 <a href='http://www.uuuuj.com/#'>其他</a>
 </span><br />
 <span>
 @yield('link')
 </span>
-<div class='foot'>Music <a href='javascript:void(0);'  onclick="document.getElementById('backMusic').play()" >ON&nbsp|</a><a href='javascript:void(0);' onclick="document.getElementById('backMusic').pause()" >&nbspOFF</a><audio id='backMusic'src='#' loop='loop'></audio>
+<div class='music'>
+Music 
+<a href='javascript:void(0);'  onclick="document.getElementById('backMusic').play()" >ON&nbsp|</a>
+<a href='javascript:void(0);' onclick="document.getElementById('backMusic').pause()" >&nbspOFF</a>
+<audio id='backMusic'src='http://uuuuj.com/music/TrustYou.mp3' loop='loop' autoplay='autoplay'></audio>
 <span class='icon-wordpress'></span>
 <span class='icon-html5'></span><br />
 <span>ICP备88888888号</span>
@@ -128,4 +154,5 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 </div><!-- body end-->
 </body>
 </html>
+<?php };?>
 
