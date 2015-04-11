@@ -4,7 +4,7 @@
 @endsection
 @section('banner')
 <?php 
-				echo '<a  id=\'a\' href=\'http://'.$_SERVER['HTTP_HOST'].'\'>HOME</a>&nbsp>&nbsp<a id=\'b\' href=\'/category/'.$post->name.'\'>'.$post->name.'</a>&nbsp>&nbsp'.$post->title;
+				echo '<a  id=\'a\' href=\'/page/1\'>HOME</a>&nbsp>&nbsp<a id=\'b\' href=\'/category/'.$post->name.'/page/1\'>'.$post->name.'</a>&nbsp>&nbsp'.$post->title;
  ?>
 @endsection
 @section('content')
