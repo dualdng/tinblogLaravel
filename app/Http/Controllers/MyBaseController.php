@@ -100,7 +100,7 @@ class MyBaseController extends Controller {
 		public static function getLine()
 		{
 				//获取台词
-				$url='http://lab.uuuuj.com/llago/include/line_api.php';
+				$url='http://106.185.24.137/lab.uuuuj.com/public_html/llago/include/line_api.php';
 				$line=file_get_contents($url,true);
 				return json_decode($line,true);
 		}
