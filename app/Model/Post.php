@@ -18,6 +18,7 @@ class Post extends Model {
 					->leftJoin('b_user','b_article.userId','=','b_user.id')
 					->leftJoin('b_category','b_article.categoryId','=','b_category.id')
 					->select('b_article.id','b_article.title','b_article.content','b_article.excerpt','b_user.name as userName','b_category.name','b_article.tag','b_article.type','b_article.createDate','b_article.view','b_article.userId')
+					->where('b_article.status',1)
 					->orderBy('id','desc')
 					->get();
 			return $post;

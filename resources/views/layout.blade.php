@@ -76,6 +76,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 <div id='navRight'>
 <a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
 <a id='category' href='/category/LifeTime/page/1' title='关于你'>LifeTime</a>&nbsp
+<a id='title' href='/single/0' title='留言板'>留言板</a>&nbsp
 &nbsp
 <a href='http://soft.uuuuj.com' title='Soft Music' style='display:none'>Music</a>
 </div>
