@@ -145,7 +145,7 @@ if($postNum==1)
 								while($i>($page+4))
 								{
 										echo '...&nbsp<a href=\'/page/'.$postNum.'\'>'.$postNum.'</a>&nbsp';
-										break;
+										exit; //大于指定值直接退出循环，防止多个大于该值导致重复
 								}
 						}
 						if($page!=$postNum)
