@@ -137,12 +137,12 @@ if($postNum==1)
 										echo '<span>'.$i.'</span>&nbsp';
 										break;
 								}
-								while($i!=$page&$i<($page+4))
+								while($i!=$page&&$i<($page+4))
 								{	
 										echo '<a href=\'/page/'.$i.'\'>'.$i.'</a>&nbsp';
 										break;
 								}
-								while($i>($page+4))
+								while($i>($page+4)&&$i==($postNum-1))
 								{
 										echo '...&nbsp<a href=\'/page/'.$postNum.'\'>'.$postNum.'</a>&nbsp';
 										break;
