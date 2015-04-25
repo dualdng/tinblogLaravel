@@ -71,7 +71,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 </header>
 <nav id='navTop'>
 <div id='navLogo'>
-<a href='<?php echo 'http://'.$_SERVER['HTTP_HOST'];?>' title='Brague'><img src='image/logo.png' /></a>
+<a href='<?php echo 'http://'.$_SERVER['SERVER_NAME'];?>' title='Brague'><img src='image/logo.png' /></a>
 </div>
 <div id='navRight'>
 <a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
