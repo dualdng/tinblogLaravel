@@ -83,7 +83,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 </nav>
 <nav id='navTopTwo'>
 <div id='navLogo'>
-<a href='' title='Brague'><img src='/image/logo.png' /></a>
+<a href='/' title='Brague'><img src='/image/logo.png' /></a>
 </div>
 <div id='navRight'>
 <a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
