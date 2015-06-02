@@ -12,15 +12,31 @@
 }
 @-webkit-keyframes tips {
 		form {
-				color:red;
+				font-size:32px;
 		}
 		to {
-				color:#61a64b;
+				font-size:20px;
 		}
 
 }
+@-o-keyframes tips {
+		form {
+				font-size:32px;
+		}
+		to {
+				font-size:20px;
+		}
 
+}
+@-moz-keyframes tips {
+		form {
+				font-size:32px;
+		}
+		to {
+				font-size:20px;
+		}
 
+}
 /** end **/
 * {
 		margin:0 auto;
@@ -91,12 +107,14 @@ header {
 		margin-top:1%;
 }
 .scrollDown a:link {
-		color:red;
-		animation:tips 2s;
-		-webkit-animation:tips 2s ease infinite;
+		color:#61a64b;
+		-webkit-animation:tips 1s ease infinite;
+		-o-animation:tips 1s ease infinite;
+		-moz-animation:tips 1s ease infinite;
+		animation:tips 1s ease infinite;
 }
 .scrollDown a:hover {
-		color:#61a64b;
+		color:red;
 }
 .mainTitle {
 		font-size:12px;
@@ -623,10 +641,6 @@ input.submit:hover {
 		right:2%;
 		z-index:9999;
 }
-a#getSide:link {
-		-webkit-animation:tips 2s ease infinite;
-}
-
 a#getSide:hover {
 		color:#b3b3b1;
 }
