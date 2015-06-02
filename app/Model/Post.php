@@ -43,6 +43,16 @@ class Post extends Model {
 
 			return $post;
 	}
+	public static function getPopPost()
+	{
+			$post=DB::table('b_article')
+					->select('b_article.id','b_article.title')
+					->orderBy('view','desc')
+					->limit(5)
+					->get();
+			return $post;
+
+	}
 
 
 }

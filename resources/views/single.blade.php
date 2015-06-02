@@ -85,6 +85,7 @@ $(function(){
 		getComment(<?php echo $id;?>);
 		getCommentArea(<?php echo $id;?>,0);
 		updateView(<?php echo $id;?>);
+		scrollDown();
 })
 
 </script>

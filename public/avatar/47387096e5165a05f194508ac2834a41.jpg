@@ -1,11 +1,9 @@
-<HTML>
-	<HEAD>
-		<TITLE>Service Unavailable - Connection Error</TITLE>
-		<META http-equiv=Content-Type content="text-html; charset=UTF-8">
-	</HEAD>
-	<BODY>
-		<H1>Service Unavailable</H1>
-		Connection reset by peer
-		<P>Reference #54.6444266e.540e6396.1428382316</P>
-	</BODY>
-</HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL /avatar/47387096e5165a05f194508ac2834a41 was not found on this server.</p>
+<hr>
+<address>Apache/2.4.10-1-beget-reuseport (Unix) Server at www.gravatar.com Port 80</address>
+</body></html>

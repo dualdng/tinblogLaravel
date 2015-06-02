@@ -40,6 +40,10 @@ Route::get('archive', 'MainController@getArchive');
 
 Route::post('archive', 'MainController@getArchive');
 
+Route::get('side', 'MainController@getSide');
+
+Route::post('side', 'MainController@getSide');
+
 Route::get('login', 'Dashboard\MainController@getLogin');
 
 Route::post('login', 'Dashboard\MainController@auth');

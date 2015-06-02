@@ -39,120 +39,131 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 #########AX&&B#####################BAAG8B@#######@#######@@@@##################@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 -->
 <html>
-<head>
-<meta charset='utf-8' />
-<meta http-equiv='X-UA-Compatible' content='IE=edge'> 
-<meta name='viewport' content='width=device-width, initial-scale=1'> 
-<meta name="csrf-token" content="{{ csrf_token() }}" > <!-- laravel的放夸域请求验证 -->
-<title>@yield('title')</title>
-<meta name='description' content='What a beauty life!' />
-<meta name='keywords' content='Brague,WordPress,Emlog,php' />
-<meta name='author' content='Tinty' />
-<link rel='shortcut icon' href='/favicon.ico'>
-<link rel='stylesheet' type='text/css' href='/style/main.css' />
-<link rel='stylesheet' type='text/css' href='/style/icomoon/style.css' />
-<link rel='stylesheet' type='text/css' href='/image/github/gh-buttons.css' />
-<link rel='stylesheet' href='/editor/plugins/code/prettify.css' />
-<script type='text/javascript' src='/js/jquery-2.1.0.min.js'></script>
-<script type='text/javascript' src='/js/main.js'></script>
-<script charset='utf-8' src='/editor/kindeditor.js'></script>
-<script charset='utf-8' src='/editor/plugins/code/code.js'></script>
-<script charset='utf-8' src='/editor/plugins/code/prettify.js'></script>
+		<head>
+				<meta charset='utf-8' />
+				<meta http-equiv='X-UA-Compatible' content='IE=edge'> 
+				<meta name='viewport' content='width=device-width, initial-scale=1'> 
+				<meta name="csrf-token" content="{{ csrf_token() }}" > <!-- laravel的放夸域请求验证 -->
+				<title>@yield('title')</title>
+				<meta name='description' content='What a beauty life!' />
+				<meta name='keywords' content='Brague,WordPress,Emlog,php' />
+				<meta name='author' content='Tinty' />
+				<link rel='shortcut icon' href='/favicon.ico'>
+				<!-- 新 Bootstrap 核心 CSS 文件 -->
+				<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+				<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+				<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+				<link rel='stylesheet' type='text/css' href='/style/main.css' />
+				<link rel='stylesheet' type='text/css' href='/style/icomoon/style.css' />
+				<link rel='stylesheet' type='text/css' href='/image/github/gh-buttons.css' />
+				<link rel='stylesheet' href='/editor/plugins/code/prettify.css' />
+				<script type='text/javascript' src='/js/jquery-2.1.0.min.js'></script>
+				<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+				<script src="/bootstrap/js/bootstrap.min.js"></script>
+				<script type='text/javascript' src='/js/jquery.typer.js'></script>
+				<script type='text/javascript' src='/js/main.js'></script>
+				<script charset='utf-8' src='/editor/kindeditor.js'></script>
+				<script charset='utf-8' src='/editor/plugins/code/code.js'></script>
+				<script charset='utf-8' src='/editor/plugins/code/prettify.js'></script>
 
-<!--[if IE]>
-<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-<![endif]-->
-<meta property='qc:admins' content='13206470126476524665474162477' /><!-- qq 认证-->
-<meta property='wb:webmaster' content='22744e929fb4826d' /><!-- sina 认证-->
-</head>
-<body>
-<header>
-@yield('header')
-</header>
-<nav id='navTop'>
-<div id='navLogo'>
-<a href='/' title='Brague'><img src='image/logo.png' /></a>
-</div>
-<div id='navRight'>
-<a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
-<a id='category' href='/category/LifeTime/page/1' title='关于你'>LifeTime</a>&nbsp
-<a id='title' href='/single/0' title='留言板'>留言板</a>&nbsp
-&nbsp
-<a href='http://soft.uuuuj.com' title='Soft Music' style='display:none'>Music</a>
-</div>
-</nav>
-<nav id='navTopTwo'>
-<div id='navLogo'>
-<a href='/' title='Brague'><img src='/image/logo.png' /></a>
-</div>
-<div id='navRight'>
-<a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
-<a id='category' href='/category/LifeTime/page/1' title='关于你'>LifeTime</a>&nbsp
-<a id='title' href='/single/0' title='留言板'>留言板</a>&nbsp
-&nbsp
-<a href='http://soft.uuuuj.com' title='Soft Music' style='display:none'>Music</a>
-</div>
-<div id='progress'></div>
-</nav>
+				<!--[if IE]>
+				<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+				<![endif]-->
+				<meta property='qc:admins' content='13206470126476524665474162477' /><!-- qq 认证-->
+				<meta property='wb:webmaster' content='22744e929fb4826d' /><!-- sina 认证-->
+		</head>
+		<body>
+				<header>
+				@yield('header')
+				</header>
+				<nav id='navTop'>
+				<div id='navLogo'>
+						<a href='/' title='Brague'><img src='image/logo.png' /></a>
+				</div>
+				<div id='navRight'>
+						<a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
+						<a id='category' href='/category/LifeTime/page/1' title='关于你'>LifeTime</a>&nbsp
+						<a id='title' href='/single/0' title='留言板'>留言板</a>&nbsp
+						&nbsp
+						<a href='http://soft.uuuuj.com' title='Soft Music' style='display:none'>Music</a>
+				</div>
+				</nav>
+				<nav id='navTopTwo'>
+				<div id='navLogo'>
+						<a href='/' title='Brague'><img src='/image/logo.png' /></a>
+				</div>
+				<div id='navRight'>
+						<a id='category' href='/category/Codes/page/1' title='科学分类'>Codes</a>&nbsp
+						<a id='category' href='/category/LifeTime/page/1' title='关于你'>LifeTime</a>&nbsp
+						<a id='title' href='/single/0' title='留言板'>留言板</a>&nbsp
+						&nbsp
+						<a href='http://soft.uuuuj.com' title='Soft Music' style='display:none'>Music</a>
+				</div>
+				<div id='progress'></div>
+				</nav>
 
-<!-- 载入动画-->
-<div class='spinner'>
-<div class='spinner-container container1'>
-<div class='circle1'></div>
-<div class='circle2'></div>
-<div class='circle3'></div>
-<div class='circle4'></div>
-</div>
-<div class='spinner-container container2'>
-<div class='circle1'></div>
-<div class='circle2'></div>
-<div class='circle3'></div>
-<div class='circle4'></div>
-</div>
-<div class='spinner-container container3'>
-<div class='circle1'></div>
-<div class='circle2'></div>
-<div class='circle3'></div>
-<div class='circle4'></div>
-</div>
-</div>
-<!-- 载入动画-->
-<div id='body'>
-<?php };?>
-<div id='banner'>
-@yield('banner')
-</div>
-<article class="mainContent">
-@yield('content')
-</article>
-<?php
-if($music==1) {?>
-<footer>
-<div class='widget'>
-<a id='music' value='0' href='javascript:music()' title='点击关闭音乐'><span class='icon-headphones'></span></a>
-<div id='scrollUp' style='display:none'><a href='javascript:scrollUp();'><span class='icon-arrow-up'></span></a></div>
-</div>
-<nav id='navFoot'>
-<span><a href='http://www.uuuuj.com/#'>关于</a>
-<a href='javascript:getArchive()'>归档</a>
-<a href='http://www.uuuuj.com/#'>其他</a>
-</span><br />
-<span>
-@yield('link')
-</span>
-<div class='music'>
-Music 
-<a href='javascript:void(0);'  onclick="document.getElementById('backMusic').play()" >ON&nbsp|</a>
-<a href='javascript:void(0);' onclick="document.getElementById('backMusic').pause()" >&nbspOFF</a>
-<audio id='backMusic'src='http://uuuuj.com/music/Scabs.mp3' loop='loop' autoplay='autoplay'></audio>
-<span class='icon-wordpress'></span>
-<span class='icon-html5'></span><br />
-<span>ICP备88888888号</span>
-</div>
-</nav>
-</footer>
-</div><!-- body end-->
-</body>
+				<!-- 载入动画-->
+				<div class='spinner'>
+						<div class='spinner-container container1'>
+								<div class='circle1'></div>
+								<div class='circle2'></div>
+								<div class='circle3'></div>
+								<div class='circle4'></div>
+						</div>
+						<div class='spinner-container container2'>
+								<div class='circle1'></div>
+								<div class='circle2'></div>
+								<div class='circle3'></div>
+								<div class='circle4'></div>
+						</div>
+						<div class='spinner-container container3'>
+								<div class='circle1'></div>
+								<div class='circle2'></div>
+								<div class='circle3'></div>
+								<div class='circle4'></div>
+						</div>
+				</div>
+				<!-- 载入动画-->
+				<div id='body'>
+						<?php };?>
+						<div id='banner'>
+								@yield('banner')
+						</div>
+						<article class="mainContent">
+						@yield('content')
+						</article>
+						<?php
+						if($music==1) {?>
+						<footer>
+						<div class='widget'>
+								<div id='scrollUp' style='display:none'><a href='javascript:scrollUp();'><span class='icon-arrow-up'></span></a></div>
+						</div>
+						<nav id='navFoot'>
+						<span><a href='http://www.uuuuj.com/#'>关于</a>
+								<a href='javascript:getArchive()'>归档</a>
+								<a href='http://www.uuuuj.com/#'>其他</a>
+						</span><br />
+						<span>
+								@yield('link')
+						</span>
+						<div class='music'>
+								<audio id='backMusic'src='http://www.uuuuj.com/music/bgm_colhen_inn_sereuha_clip.mp3'  value='0' ></audio>
+								<span class='icon-wordpress'></span>
+								<span class='icon-html5'></span><br />
+								<span>ICP备88888888号</span>
+						</div>
+						</nav>
+						</footer>
+				</div><!-- body end-->
+				<a id='getSide' href='javascript:void(0)'onclick='side()' value='0'><span class='glyphicon glyphicon-align-justify'></span></a>
+				<div id='side'>
+								<script>
+										$(document).ready(function(){
+												getSide();
+										})
+								</script>
+				</div>
+		</body>
 </html>
 <?php };?>
 
