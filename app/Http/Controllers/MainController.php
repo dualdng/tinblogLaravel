@@ -187,6 +187,24 @@ class MainController extends Controller {
 				return view('archive',$data);
 
 		}
+		public function getSide()
+		{
+				$post=Post::getPopPost();
+				$content='';
+				$content.='<div class=\'pop list-group\'>';
+				$content.='<a class=\'list-group-item disabled\'>随机文章</a>';
+				foreach($post as $value){
+						$content.='<a id=\'title\'class=\'list-group-item\'  href=\'/single/'.$value->id.'\'>'.$value->title.'</a>';
+				}
+				$content.='</div>';
+				$content.='<div class=\'list-group\'>';
+				$content.='<a href=\'#\' class=\'list-group-item disabled\'>背景音乐</a>';
+				$content.='<a id=\'music\' href=\'javascript:void(0)\' value=\'0\' class=\'list-group-item\' >bgm_colhen_inn_serehua</a>';
+				$content.='<a id=\'music\' href=\'javascript:void(0)\' value=\'1\' class=\'list-group-item\' >Scabs</a>';
+				$content.='</div>';
+
+				return $content;
+		}
 		public function getaaaArchive()
 		{
 				//未使用

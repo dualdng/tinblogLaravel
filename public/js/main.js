@@ -8,12 +8,42 @@ $(document).ready(function($){
 		$(window).scroll(function(){
 				var h=$(this).scrollTop();
 				if (h>=0) {
-						$('.bgImg').css({'height':'0'});
-						$('.mainTitle').css({'display':'none'});
+						$('header').css({'height':'0'});
+						$('.jumbotron').css({'display':'none'});
 						$('#navTop').css({'visibility':'visible','position':'fixed','top':'0','background':'#fff'});
 				}
 		})
 });
+function scrollDown(){
+		$('header').css({'height':'0'});
+		$('.jumbotron').css({'display':'none'});
+		$('#navTop').css({'visibility':'visible','position':'fixed','top':'0','background':'#fff'});
+}
+function getSide(){
+		var url='/side';
+		$.ajax({
+				url:url,
+				type:'GET',
+				success:function(data){
+						$('#side').append(data);
+				}
+		})
+		return false;
+}
+function side(){
+		var isTrue=parseInt($('#getSide').attr('value'));
+		if(isTrue==0){
+				$('#side').css({'width':'250px'});
+				$('#getSide').attr('value',1);
+				$('#getSide span').attr('class','glyphicon glyphicon-remove');
+		}else{
+				$('#side').css({'width':'0'});
+				$('#getSide').attr('value',0);
+				$('#getSide span').attr('class','glyphicon glyphicon-align-justify');
+		}
+		return false;
+
+}
 window.addEventListener('popstate',function(e){
 		$('#body').empty();
 		$('#body').prepend(e.state.content);
@@ -21,20 +51,26 @@ window.addEventListener('popstate',function(e){
 window.onload=function(){
 		$('#progress').stop(true,true);
 }
-function music()
-{
-		var i=$('#music').attr('value');
-		if (i==0) {
-				document.getElementById('backMusic').pause();
-				$('#music').attr('title','点击打开音乐');
-				$('#music').attr('value','1');
-		}else {
-				document.getElementById('backMusic').play();
-				$('#music').attr('title','点击关闭音乐');
-				$('#music').attr('value','0');
+$(document).on('click','a#music',function(){
+		var song=new Array('bgm_colhen_inn_sereuha_clip','Scabs');
+		var i=$(this).attr('value');
+		var a=$('#backMusic').attr('value');
+		var audio=$('#backMusic')[0];
+		if(i==a){
+				if(typeof(audio)!='undefined'){
+						if(audio.paused){
+								audio.play();
+						}else{
+								audio.pause();
+						}
+				}
+		}else{
+		var src='http://www.uuuuj.com/music/'+song[i]+'.mp3';
+		$('#backMusic').attr('src',src).attr('value',i);
+		audio.play();
 		}
 		return false;
-}
+})
 		
 function double(){
 		$('#article').css({'width':'70%'});
