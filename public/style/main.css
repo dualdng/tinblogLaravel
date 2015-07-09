@@ -198,7 +198,7 @@ span.views {
 		float:right;
 		font-size:12px;
 }
-.content {
+#article .content {
 		overflow:hidden;
 		max-height:400px;
 }
