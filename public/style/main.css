@@ -3,10 +3,10 @@
  */
 @keyframes tips {
 		form {
-				color:#ccc;
+				font-size:32px;
 		}
 		to {
-				color:#000;
+				font-size:20px;
 		}
 
 }
