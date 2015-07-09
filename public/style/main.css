@@ -198,9 +198,12 @@ span.views {
 		float:right;
 		font-size:12px;
 }
+.content {
+		overflow:hidden;
+		max-height:400px;
+}
 .content img {
 		width:100%;
-		height:auto;
 }
 .user {
 		font-size:12px;
