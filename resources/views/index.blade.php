@@ -1,3 +1,10 @@
+<?php
+/**
+ * a simple blog with laravel5
+ * @author Tinty
+ * @version 1.0
+ */
+?>
 @extends('layout')
 @section('title')
 Brague&nbsp|&nbsp首页
@@ -37,7 +44,7 @@ Brague&nbsp|&nbsp首页
 				$str=$values->content;
 				preg_match_all($ruls,$str,$matches);
 				$c=count($matches[0]);
-				echo '<div id=\'image\'><div class=\'title\'><span class=\'icon-image\'>&nbsp&nbsp</span><a id=\'title\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
+				echo '<div id=\'image\'><div class=\'title\'><span class=\'icon-image\'>&nbsp</span><a id=\'title\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
 						echo '<div class=\'content\'>';
 								if(empty($values->excerpt))
 								{
@@ -104,7 +111,7 @@ Brague&nbsp|&nbsp首页
 				$ruls="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg|\.jpeg|\.bmp|\.png]))[\'|\"].*?[\/]?>/";
 				$str=$values->content;
 				preg_match($ruls,$str,$matches);
-				echo '<div id=\'standard\'><div class=\'title\'><span class=\'icon-file\' >&nbsp&nbsp</span><a id=\'title\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
+				echo '<div id=\'standard\'><div class=\'title\'><span class=\'icon-file\' >&nbsp</span><a id=\'title\' href=\'/single/'.$values->id.'\'>'.$values->title.'</a><span class=\'views\'>'.$values->view.' Views<br />'.date('d M,y',strtotime($values->createDate)).'</span></div>';
 						if(empty($values->excerpt))
 						{
 						echo '<div class=\'content\'>'.$values->content.'</div>';
@@ -139,8 +146,7 @@ Brague&nbsp|&nbsp首页
 		else
 		{
 		if($page!=1)
-		{
-		echo '<a href=\'/page/'.($page-1).'\'>Pre</a>&nbsp';
+		{ echo '<a href=\'/page/'.($page-1).'\'>Pre</a>&nbsp';
 		}
 		for($i=1;$i<=$postNum;$i++)
 		{
