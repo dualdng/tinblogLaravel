@@ -69,17 +69,14 @@ class Collection extends BaseCollection {
 	{
 		if (func_num_args() == 2) return parent::contains($key, $value);
 
-		if ( ! $this->useAsCallable($key))
+		if ($this->useAsCallable($key)) return parent::contains($key);
+
+		$key = $key instanceof Model ? $key->getKey() : $key;
+
+		return parent::contains(function($k, $m) use ($key)
 		{
-			$key = $key instanceof Model ? $key->getKey() : $key;
-
-			return parent::contains(function($k, $m) use ($key)
-			{
-				return $m->getKey() == $key;
-			});
-		}
-
-		return parent::contains($key);
+			return $m->getKey() == $key;
+		});
 	}
 
 	/**
@@ -122,7 +119,7 @@ class Collection extends BaseCollection {
 	}
 
 	/**
-	 * Get the array of primary keys
+	 * Get the array of primary keys.
 	 *
 	 * @return array
 	 */

@@ -147,7 +147,7 @@ MM########MBBBBHBMMM########################################@@Xi.,,,,,,,, i3ii  
 								@yield('link')
 						</span>
 						<div class='music'>
-								<audio id='backMusic'src='http://www.uuuuj.com/music/bgm_colhen_inn_sereuha_clip.mp3'  autoplay='autoplay' loop='loop' value='0' ></audio>
+								<audio id='backMusic'src='http://www.uuuuj.com/music/bgm_colhen_inn_sereuha_clip.mp3' loop='loop' value='0' ></audio>
 								<span class='icon-wordpress'></span>
 								<span class='icon-html5'></span><br />
 								<span>ICP备88888888号</span>
