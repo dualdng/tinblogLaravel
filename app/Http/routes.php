@@ -50,6 +50,7 @@ Route::post('login', 'Dashboard\MainController@auth');
 
 Route::get('logout', 'Dashboard\MainController@logout');
 
+
 Route::get('register', 'Dashboard\MainController@getRegister');
 Route::post('register','Dashboard\MainController@register');
 
@@ -70,3 +71,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+/**
+ * wechat api
+ */
+Route::get('wechat','WechatController@checkSignature');
